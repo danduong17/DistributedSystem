@@ -1,0 +1,5 @@
+package com.cs.ds.ws.soap;
+
+public enum Add2NumbersPublisher {
+
+}

@@ -1,0 +1,5 @@
+package com.cs.ds.ws.soap;
+
+public class Add2Numbers {
+
+}

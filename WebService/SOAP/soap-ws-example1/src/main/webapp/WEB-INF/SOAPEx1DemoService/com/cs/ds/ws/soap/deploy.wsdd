@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SOAPEx1DemoService WSDL service -->
+
+  <service name="SOAPEx1Demo" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://soap.ws.ds.cs.com"/>
+      <parameter name="wsdlServiceElement" value="SOAPEx1DemoService"/>
+      <parameter name="wsdlServicePort" value="SOAPEx1Demo"/>
+      <parameter name="className" value="com.cs.ds.ws.soap.SOAPEx1Demo"/>
+      <parameter name="wsdlPortType" value="SOAPEx1Demo"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://soap.ws.ds.cs.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="add2Numbers" qname="operNS:add2numbers" returnQName="add2numbersReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="a" type="tns:int"/>
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="b" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="add2Numbers"/>
+
+  </service>
+</deployment>

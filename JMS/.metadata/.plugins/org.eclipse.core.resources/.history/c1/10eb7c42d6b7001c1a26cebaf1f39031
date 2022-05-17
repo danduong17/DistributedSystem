@@ -1,0 +1,5 @@
+package com.cs.ds.jms.pubsub;
+
+public class QueueMessageReceiver {
+
+}
